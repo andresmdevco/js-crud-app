@@ -46,10 +46,11 @@ const onUserChanged = (updatedUser) => {
 }
 
 const reloadPage = async() => {
-    const {users} = await loadUsersByPage(state.currentPage);
-    if (users.length === 0 && state.currentPage > 1) {
-        state.currentPage -= 1;
-        await loadPreviousPage();
+    const {users, last} = await loadUsersByPage(state.currentPage);
+    if (state.currentPage > last) {
+        state.currentPage = last;
+        const {users: lastUsers} = await loadUsersByPage(state.currentPage);
+        state.users = lastUsers;
         return;
     }
     

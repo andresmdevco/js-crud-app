@@ -50,7 +50,7 @@ const tableDeleteListener = async(event) => {
         await deleteUserById(id);
         await usersStore.reloadPage();
         document.querySelector('#current-page').innerText = usersStore.getCurrentPage();
-        renderTable(element);
+        renderTable();
 
     } catch (error) {
         console.log(error);

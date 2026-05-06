@@ -10,11 +10,11 @@ const createTable = () => {
     tableHeaders.innerHTML = `
         <tr>
             <th>#ID</th>
-            <th>#Balance</th>
-            <th>#FirstName</th>
-            <th>#LastName</th>
-            <th>#Active</th>
-            <th>#Actions</th>
+            <th>Balance</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Active</th>
+            <th>Actions</th>
         </tr>
     `;
 

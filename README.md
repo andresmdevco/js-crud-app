@@ -2,7 +2,7 @@
 
 Aplicación CRUD de usuarios construida con **Vite + Vanilla JS**. Permite listar, crear, editar y eliminar usuarios consumiendo una API REST local con `json-server`. 
 
-## Tecnologías
+## 🛠 Tecnologías
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
@@ -16,7 +16,7 @@ Aplicación CRUD de usuarios construida con **Vite + Vanilla JS**. Permite lista
 - Editar un usuario existente
 - Eliminar un usuario
 
-## Instalación y uso
+## ⚙️ Instalación y uso
 
 ### 1. Clonar el repositorio
 
@@ -27,11 +27,9 @@ cd js-crud-app
 
 ### 2. Configurar variables de entorno
 
-```bash
-cp .env.template .env
-```
+- Hacer una copia de `.env.template` y renombarala como `.env`
 
-Edita el `.env` y agrega la URL base del servidor. Por defecto json-server corre en:
+- Editar el `.env` y agrega la URL base del servidor. Por defecto json-server corre en:
 
 ````dotenv
 VITE_BASE_URL=http://localhost:3001
@@ -50,3 +48,23 @@ npm run server
 npm install
 npm run dev
 ```
+
+## Arquitectura
+
+El proyecto está organizado en capas dentro de `src/users/`:
+
+- **models** — clase `User` que define el modelo de datos
+- **mappers** — transforman los datos entre el formato de la API y el modelo interno
+- **use-cases** — lógica de negocio: cargar, guardar y eliminar usuarios
+- **store** — estado global de la app (página actual, lista de usuarios)
+- **presentation** — componentes de UI que renderizan la tabla, el modal y los botones
+
+## 🧠 Conceptos practicados
+
+- Arquitectura por capas (models, mappers, use-cases, store, presentation)
+- Patrón mapper para desacoplar la API del modelo interno
+- Estado global con módulo singleton
+- CRUD completo con `fetch` (GET, POST, PATCH, DELETE)
+- Manipulación dinámica del DOM
+- Formularios con `FormData`
+- Variables de entorno con Vite (`import.meta.env`)

@@ -63,7 +63,7 @@ El proyecto está organizado en capas dentro de `src/users/`:
 
 - Arquitectura por capas (models, mappers, use-cases, store, presentation)
 - Patrón mapper para desacoplar la API del modelo interno
-- Estado global con módulo singleton
+- Estado global de la aplicación encapsulado en un módulo
 - CRUD completo con `fetch` (GET, POST, PATCH, DELETE)
 - Manipulación dinámica del DOM
 - Formularios con `FormData`
